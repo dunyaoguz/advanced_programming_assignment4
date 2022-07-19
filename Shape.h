@@ -17,7 +17,7 @@ class Shape
         int width;
         static size_t counter; // used for id-ing Shapes
 
-        Shape(std::string, char, int, int);
+        Shape(int, int, std::string, char);
 
     public:
         std::string getName() const;
@@ -28,14 +28,14 @@ class Shape
 
         void setName(const std::string&);
         void setPen(const char&);
-        void setHeight(const int&);
-        void setWidth(const int&);
+        virtual void setHeight(const int&);
+        virtual void setWidth(const int&);
 
-        virtual int areaGeo() const;
-        virtual int perimeterGeo() const;
-        virtual int areaScr() const;
-        virtual int perimeterScr() const;
-        virtual Canvas draw() const;
+        virtual double areaGeo() const = 0;
+        virtual double perimeterGeo() const = 0;
+        virtual int areaScr() const = 0;
+        virtual int perimeterScr() const = 0;
+        virtual Canvas draw() const = 0;
 
         std::string toString() const;
 
