@@ -1,4 +1,3 @@
-#include <string>
 #include "Rectangle.h"
 #include "Canvas.h"
 
