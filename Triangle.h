@@ -1,13 +1,17 @@
 #ifndef TRIANGLE_H_
 #define TRIANGLE_H_
 
+#include <string>
 #include "Shape.h"
 
-class Triangle 
+class Triangle : public Shape
 {
+    protected:
+        Triangle(int, int, std::string, char);
 
-// Similarly, class Triangle must be abstract, since it has no knowledge about the specic triangular shapes it generalizes.
-
+    public:
+        virtual double areaGeo() const override;
+        virtual ~Triangle(){};
 };
 
 #endif
