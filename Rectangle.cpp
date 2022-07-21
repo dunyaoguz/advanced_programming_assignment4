@@ -11,4 +11,4 @@ int Rectangle::areaScr() const { return height*width; }
 
 int Rectangle::perimeterScr() const { return 2*(height*width)-4; }
     
-Canvas Rectangle::draw() const { return Canvas{height, width, pen};}
+// Canvas Rectangle::draw() const { return Canvas{height, width, pen};}

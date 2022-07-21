@@ -33,20 +33,23 @@ void Shape::setWidth(const int& m_width) { width = m_width; }
 
 std::string Shape::toString() const
 {
-    std::string s0 = "Shape Information\n";
-    std::string s1 = "-----------------\n";
-    std::string s2 = "id: \t" + std::to_string(id) + "\n";
-    std::string s3 = "Shape name: \t" + name + "\n";
-    std::string s4 = "Pen character: \t" + std::to_string(pen) + "\n";
-    std::string s5 = "Height: \t" + std::to_string(height) + "\n";
-    std::string s6 = "Width: \t" + std::to_string(width) + "\n";
-    std::string s7 = "Textual area: \t" + std::to_string(this->areaScr()) + "\n";
-    std::string s8 = "Textual perimeter: \t" + std::to_string(this->perimeterScr()) + "\n";
-    std::string s9 = "Geometric area: \t" + std::to_string(this->areaGeo()) + "\n";
-    std::string s10 = "Geometric perimeter: \t" + std::to_string(this->perimeterGeo()) + "\n";
-    // std::string s11 = "Static type: \t" + typeid(this).name() + "\n";
-    // std::string s12 = "Dynamic type: \t" + typeid(*this).name() + "\n";
-    return s0+s1+s2+s3+s4+s5+s6+s7+s8+s9+s10;
+    std::string t1 = typeid(this).name();
+    std::string t2 = typeid(*this).name();
+
+    std::string info = 
+        "\nShape Information\n-----------------\n"
+        "id: " + std::to_string(id) + "\n"
+        "Shape name: " + name + "\n"
+        "Pen character: " + std::to_string(pen) + "\n"
+        "Height: " + std::to_string(height) + "\n"
+        "Width: " + std::to_string(width) + "\n"
+        "Textual area: " + std::to_string(this->areaScr()) + "\n"
+        "Textual perimeter: " + std::to_string(this->perimeterScr()) + "\n"
+        "Geometric area: " + std::to_string(this->areaGeo()) + "\n"
+        "Geometric perimeter: " + std::to_string(this->perimeterGeo()) + "\n"
+        "Static type: " + t1 + "\n"
+        "Dynamic type: " + t2 + "\n";
+    return info;
 }
 
 std::ostream &operator<<(std::ostream& output, const Shape& shapeToPrint)
