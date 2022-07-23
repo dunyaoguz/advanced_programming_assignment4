@@ -42,6 +42,6 @@ class Shape
         virtual ~Shape(){};
 };
 
-std::ostream &operator<<(std::ostream &, const Shape &);
+std::ostream &operator<<(std::ostream&, const Shape&);
 
 #endif
