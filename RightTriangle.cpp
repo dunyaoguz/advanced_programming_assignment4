@@ -11,4 +11,26 @@ int RightTriangle::areaScr() const { return (height*(height+1))/2; }
 
 int RightTriangle::perimeterScr() const { return 3*(height-1); }
 
-Canvas draw() const {}
+Canvas RightTriangle::draw() const 
+{
+    Canvas can{height, width};
+
+    // iterate over each row
+    for (size_t row = 0; row < height; row++)
+    {
+        // iterate over each column
+        for (size_t col = 0; col < width; col++)
+        {
+            // at 0: only draw at 0 
+            // at 1: only draw at 0 and 1
+            // at 2: only draw at 0, 1 and 2
+            // ...
+            // at n: draw at 0...n
+            if (col <= row)
+            {
+                can.put(row, col, pen);
+            }
+        }
+    }
+    return can;
+}

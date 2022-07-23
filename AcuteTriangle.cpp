@@ -20,4 +20,7 @@ int AcuteTriangle::areaScr() const { return height*height; }
 
 int AcuteTriangle::perimeterScr() const { return 4*(height-1); }
 
-Canvas draw() const {}
+Canvas draw() const 
+{
+    
+}

@@ -43,15 +43,9 @@ Canvas::Canvas(int rows, int columns, char fillChar)
     }
 }
 
-int Canvas::getRows() const
-{
-    return grid.size();
-}
+int Canvas::getRows() const { return grid.size(); }
 
-int Canvas::getColumns() const
-{
-    return grid[0].size();
-}
+int Canvas::getColumns() const { return grid[0].size(); }
 
 Canvas Canvas::flip_horizontal() const
 {   
@@ -85,21 +79,21 @@ Canvas Canvas::flip_vertical() const
     return vFlipped;
 }
 
-char Canvas::get(int r, int c) const
-{
-    return grid.at(r).at(c);
-}
+char Canvas::get(int r, int c) const { return grid.at(r).at(c); }
 
 void Canvas::put(int r, int c, char ch)
 {
-    if(check(r, c)) { grid.at(r).at(c) = ch; }
+    if(check(r, c)) 
+    { 
+        grid.at(r).at(c) = ch; 
+    }
 }
 
 void Canvas::drawString(int r, int c, const std::string text)
 {
-    for (size_t i = 0; i < text.length(); i++, c++)
-    {
-        grid[r][c] = text[i];
+    for (size_t i = 0; i < text.length(); i++, c++) 
+    { 
+        grid[r][c] = text[i]; 
     }
 }
 

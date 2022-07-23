@@ -33,5 +33,8 @@ int Rhombus::areaScr() const
 
 int Rhombus::perimeterScr() const { return 2*(height-1); }
 
-Canvas Rhombus::draw() const {}
+Canvas Rhombus::draw() const 
+{
+    
+}
 
