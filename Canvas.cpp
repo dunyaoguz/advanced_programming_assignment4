@@ -97,20 +97,47 @@ void Canvas::put(int r, int c, char ch)
 
 void Canvas::drawString(int r, int c, const std::string text)
 {
-
+    for (size_t i = 0; i < text.length(); i++, c++)
+    {
+        grid[r][c] = text[i];
+    }
 }
 
 void Canvas::overlap(const Canvas& can, size_t r, size_t c)
 {
-
+    for (size_t row = 0; row < can.getRows(); row++)
+    {
+        for (size_t col = 0; col < can.getColumns(); col++)
+        {
+            if (can.get(row, col) != ' ') 
+            {
+                this->put(r + row, c + col, can.get(row, col));
+            }
+        }
+    }
 }
 
-void Canvas::print(std::ostream&) const
+void Canvas::print(std::ostream& output) const
 {
-
+    for(std::vector row : grid) 
+    {
+        for (char col : row) 
+        {
+            output << col;
+        }
+        output << std::endl;
+    }
 }
 
 std::ostream& operator<<(std::ostream& sout, const Canvas& can)
 {
-
+    for(size_t row; row<can.getRows(); row++) 
+    {
+        for (size_t column; column<can.getRows(); column++) 
+        {
+            sout << can.get(row, column);
+        }
+        sout << std::endl;
+    }
+    return sout;
 }

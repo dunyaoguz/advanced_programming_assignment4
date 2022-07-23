@@ -48,6 +48,6 @@ class Canvas
         void overlap(const Canvas& can, size_t r, size_t c);
 };
 
-std::ostream& operator<< (std::ostream& sout, const Canvas& can);
+std::ostream& operator<<(std::ostream& sout, const Canvas& can);
 
 #endif
