@@ -7,7 +7,7 @@
 class Rhombus : public Shape
 {
     public:
-        Rhombus(int, std::string = "Diamond", char = '*');
+        Rhombus(int, char = '*', std::string = "Diamond");
 
         virtual void setHeight(const int&) override;
         virtual void setWidth(const int&) override;

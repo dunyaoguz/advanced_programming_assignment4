@@ -3,7 +3,7 @@
 #include "AcuteTriangle.h"
 #include "Canvas.h"
 
-AcuteTriangle::AcuteTriangle(int b, std::string m_name, char m_pen) : Triangle(b, b, m_name, m_pen)
+AcuteTriangle::AcuteTriangle(int b, char m_pen, std::string m_name) : Triangle(b, b, m_name, m_pen)
 {
     if(b%2 == 0) 
     {

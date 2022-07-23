@@ -3,7 +3,7 @@
 #include "Rhombus.h"
 #include "Canvas.h"
 
-Rhombus::Rhombus(int d, std::string m_name, char m_pen) : Shape(d, d, m_name, m_pen) 
+Rhombus::Rhombus(int d, char m_pen, std::string m_name) : Shape(d, d, m_name, m_pen) 
 {
     (*this).setHeight(d);
     (*this).setWidth(d);

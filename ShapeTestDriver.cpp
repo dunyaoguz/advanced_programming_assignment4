@@ -6,7 +6,7 @@
 #include "AcuteTriangle.h"
 #include "RightTriangle.h"
 #include "Canvas.h"
-#include "ShapeTestDriver.h"
+#include "Shape.h"
 
 using std::cout;
 using std::endl;

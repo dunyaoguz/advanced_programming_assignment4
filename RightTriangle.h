@@ -7,7 +7,7 @@
 class RightTriangle : public Triangle
 {
     public:
-        RightTriangle(int, std::string = "Ladder", char = '*');
+        RightTriangle(int, char = '*', std::string = "Ladder");
 
         virtual double perimeterGeo() const override;
         virtual int areaScr() const override;

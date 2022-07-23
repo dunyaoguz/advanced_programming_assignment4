@@ -7,7 +7,7 @@
 class AcuteTriangle : public Triangle
 {
     public:
-        AcuteTriangle(int, std::string = "Wedge", char = '*');
+        AcuteTriangle(int, char = '*', std::string = "Wedge");
 
         virtual void setHeight(const int&) override;
 

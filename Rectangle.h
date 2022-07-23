@@ -7,7 +7,7 @@
 class Rectangle : public Shape
 {
     public:
-        Rectangle(int, int, std::string = "Rectangle", char = '*');
+        Rectangle(int, int, char = '*', std::string = "Rectangle");
 
         virtual double areaGeo() const override;
         virtual double perimeterGeo() const override;
