@@ -1,7 +1,7 @@
 #include "Rectangle.h"
 #include "Canvas.h"
 
-Rectangle::Rectangle(int m_height, int m_width, char m_pen, std::string m_name) : Shape(m_height, m_width, m_name, m_pen) {};
+Rectangle::Rectangle(size_t m_height, size_t m_width, char m_pen, std::string m_name) : Shape(m_height, m_width, m_name, m_pen) {};
 
 double Rectangle::areaGeo() const { return height*width; }
 

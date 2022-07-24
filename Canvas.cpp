@@ -30,7 +30,7 @@ void Canvas::resize(size_t rows, size_t cols)
     grid.resize(rows);
 }
 
-Canvas::Canvas(int rows, int columns, char fillChar)
+Canvas::Canvas(size_t rows, size_t columns, char fillChar)
 {
     for(size_t i = 0; i<rows; i++)
     {
@@ -125,13 +125,6 @@ void Canvas::print(std::ostream& output) const
 
 std::ostream& operator<<(std::ostream& sout, const Canvas& can)
 {
-    for(size_t row; row<can.getRows(); row++) 
-    {
-        for (size_t column; column<can.getRows(); column++) 
-        {
-            sout << can.get(row, column);
-        }
-        sout << std::endl;
-    }
+    can.print(sout);
     return sout;
 }

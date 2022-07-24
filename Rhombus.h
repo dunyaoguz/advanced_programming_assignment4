@@ -7,10 +7,10 @@
 class Rhombus : public Shape
 {
     public:
-        Rhombus(int, char = '*', std::string = "Diamond");
+        Rhombus(size_t, char = '*', std::string = "Diamond");
 
-        virtual void setHeight(const int&) override;
-        virtual void setWidth(const int&) override;
+        virtual void setHeight(const size_t&) override;
+        virtual void setWidth(const size_t&) override;
 
         virtual double areaGeo() const override;
         virtual double perimeterGeo() const override;

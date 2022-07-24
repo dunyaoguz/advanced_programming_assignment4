@@ -15,14 +15,19 @@ void shape_examples(); // the examples shown in the assignment description
 void drawHouse();      // draw front view of a house 
 void drawHouseElement(Canvas& house_canvas, const Shape& shp, int row, int col);
 
+void drawRhombus();
+void drawRightTriangle();
+void drawRectangle();
+
 int main()
 {
    // shape_examples();
-   drawHouse();   
+   // drawHouse();  
+   drawRectangle();
+   drawRhombus();
+   drawRightTriangle();
    return 0;
 }
-
-
 
 void drawHouseElement(Canvas& house_canvas, const Shape& shp, int row, int col)
 {
@@ -204,4 +209,25 @@ void shape_examples()
    // concrete shape object, shp behaves like a pointer, 
    // calling the virtual function draw() polymorphically
    //------------------------------------------------------------
+}
+
+void drawRhombus()
+{
+   Rhombus ace{ 16, 'v', "Ace of diamond" };
+   Canvas can{ ace.draw() };
+   cout << can << endl;
+}
+
+void drawRightTriangle()
+{
+   RightTriangle rt{ 10, 'L', "Carpenter's square" };   
+   Canvas can{ rt.draw() };
+   cout << can << endl;
+}
+
+void drawRectangle()
+{
+   Rectangle rect{ 5, 7 };   
+   Canvas can{ rect.draw() };
+   cout << can << endl;
 }

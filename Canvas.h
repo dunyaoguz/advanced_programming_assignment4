@@ -25,7 +25,7 @@ class Canvas
 
     public:
         // creates this canvas's (rows x columns) grid filled with blank characters
-        Canvas(int rows, int columns, char fillChar = ' ');
+        Canvas(size_t rows, size_t columns, char fillChar = ' ');
 
         int getRows() const; // returns height of this Canvas object
         int getColumns() const; // returns width of this Canvas object

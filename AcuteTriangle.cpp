@@ -3,7 +3,7 @@
 #include "AcuteTriangle.h"
 #include "Canvas.h"
 
-AcuteTriangle::AcuteTriangle(int b, char m_pen, std::string m_name) : Triangle(b, b, m_name, m_pen)
+AcuteTriangle::AcuteTriangle(size_t b, char m_pen, std::string m_name) : Triangle(b, b, m_name, m_pen)
 {
     if(b%2 == 0) 
     {
@@ -12,7 +12,7 @@ AcuteTriangle::AcuteTriangle(int b, char m_pen, std::string m_name) : Triangle(b
     }
 }
 
-void AcuteTriangle::setHeight(const int& m_height) { height = (m_height+1)/2; } 
+void AcuteTriangle::setHeight(const size_t& m_height) { height = (m_height+1)/2; } 
 
 double AcuteTriangle::perimeterGeo() const { return width + std::sqrt(width*width + 4*height*height); }
 
@@ -20,7 +20,8 @@ int AcuteTriangle::areaScr() const { return height*height; }
 
 int AcuteTriangle::perimeterScr() const { return 4*(height-1); }
 
-Canvas draw() const 
+Canvas AcuteTriangle::draw() const 
 {
-    
+    Canvas can{height, width};
+    return can;
 }

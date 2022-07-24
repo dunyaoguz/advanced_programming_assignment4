@@ -7,7 +7,7 @@
 class Triangle : public Shape
 {
     protected:
-        Triangle(int, int, std::string, char);
+        Triangle(size_t, size_t, std::string, char);
 
     public:
         virtual double areaGeo() const override;
