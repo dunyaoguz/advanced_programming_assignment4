@@ -22,8 +22,8 @@ void drawRectangle();
 
 int main()
 {
-   shape_examples();
-   // drawHouse();  
+   // shape_examples();
+   drawHouse();  
    // drawRectangle();
    // drawRhombus();
    // drawRightTriangle();

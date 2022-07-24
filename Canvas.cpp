@@ -50,15 +50,16 @@ int Canvas::getColumns() const { return grid[0].size(); }
 Canvas Canvas::flip_horizontal() const
 {   
     Canvas hFlipped{grid.size(), grid[0].size()};
-    for(std::vector<char> col : grid)
+    size_t row_count = 0;
+    for(std::vector<char> row : grid)
     {
-        size_t row_count = 0;
-        size_t col_count = col.size() - 1;
-        for(size_t i = 0; i < col.size(); i++)
+        size_t col_count = row.size() - 1;
+        for(size_t i = 0; i < row.size(); i++)
         {
-            hFlipped.put(row_count, col_count, col[col_count]);
+            hFlipped.put(row_count, col_count, row[i]);
             col_count--;
         }
+        row_count++;
     }
     return hFlipped;
 }
@@ -66,15 +67,14 @@ Canvas Canvas::flip_horizontal() const
 Canvas Canvas::flip_vertical() const
 {
     Canvas vFlipped{grid.size(), grid[0].size()};
-    for(std::vector<char> col : grid)
+    size_t row_count = grid.size() - 1;
+    for(std::vector<char> row : grid)
     {
-        size_t row_count = grid.size() - 1;
-        size_t col_count = 0;
-        for(size_t i = 0; i < col.size(); i++)
+        for(size_t i = 0; i < row.size(); i++)
         {
-            vFlipped.put(row_count, col_count, col[col_count]);
-            col_count--;
+            vFlipped.put(row_count, i, row[i]);
         }
+        row_count--;
     }
     return vFlipped;
 }
