@@ -17,15 +17,17 @@ void drawHouseElement(Canvas& house_canvas, const Shape& shp, int row, int col);
 
 void drawRhombus();
 void drawRightTriangle();
+void drawAcuteTriangle();
 void drawRectangle();
 
 int main()
 {
-   // shape_examples();
+   shape_examples();
    // drawHouse();  
-   drawRectangle();
-   drawRhombus();
-   drawRightTriangle();
+   // drawRectangle();
+   // drawRhombus();
+   // drawRightTriangle();
+   // drawAcuteTriangle();
    return 0;
 }
 
@@ -213,7 +215,7 @@ void shape_examples()
 
 void drawRhombus()
 {
-   Rhombus ace{ 16, 'v', "Ace of diamond" };
+   Rhombus ace{ 9, 'v', "Ace of diamond" };
    Canvas can{ ace.draw() };
    cout << can << endl;
 }
@@ -229,5 +231,12 @@ void drawRectangle()
 {
    Rectangle rect{ 5, 7 };   
    Canvas can{ rect.draw() };
+   cout << can << endl;
+}
+
+void drawAcuteTriangle()
+{
+   AcuteTriangle at{ 17 };   
+   Canvas can{ at.draw() };
    cout << can << endl;
 }

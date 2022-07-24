@@ -37,20 +37,12 @@ Canvas Rhombus::draw() const
 {
     Canvas can{height, width};
     // example: height = 17
-    // at 0: draw 1 (17 = 1 + 2*8) @ 9 (1+0*2)
-    // at 1: draw 3 (17 = 3 + 2*7) @ 8, 9, 10 (1+1*2)
-    // at 2: draw 5 (17 = 5 + 2*6) @ 7, 8, 9, 10, 11 (1+2*2)
-    // at 3: draw 7 (17 = 7 + 2*5) @ 6, 7, 8, 9, 10, 11, 12
-    // at 4: draw 9 (17 = 9 + 2*4) @ 5, 6, 7, 8, 9, 10, 11, 12, 13
-    // at 5: draw 11 (17 = 11 + 2*3) @ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
-    // at 6: draw 13 (17 = 13 + 2*2) @ 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    // at 7: draw 15 (17 = 15 + 2*1) @ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
-    // at 8: draw 17 (17 = 17 + 2*0) @ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
-    // at 9: draw 15 (15 = 17 - 2*1)
-    // at 10: draw 13 (13 = 17 - 2*2)
-    // at 11: draw 11 (11 = 17 - 2*3)
-    // at 12: draw 9 (9 = 17 - 2*4)
-    // at 13: draw 7 (7 = 17 - 2*5)
+    // at 0: draw 1 (17 = 1 + 2*8)
+    // at 1: draw 3 (17 = 3 + 2*7) 
+    // at 2: draw 5 (17 = 5 + 2*6)
+    // ...
+    // at 8: draw 17 (17 = 17 + 2*0)
+    // ...
     // at 14: draw 5 (5 = 17 - 2*6)
     // at 15: draw 3 (3 = 17 - 2*7)
     // at 16: draw 1 (1 = 17 - 2*8)  
@@ -59,25 +51,27 @@ Canvas Rhombus::draw() const
         int midpoint = height/2;
         if(row < midpoint) 
         {
-            int no_chars = 1 + row*2;
-            can.put(row, midpoint, pen); 
-            // when no_chars = 1: 0 iterations
-            // when no_chars = 3: 1 iterations (put at 8, 10)
-            // when no_chars = 5: 2 iterations (put at 8, 10, 7, 11)
-            for(int i = 1; i < no_chars; i+=2)
+            int no_chars = 1 + row*2;            
+            // calculate the number of empty chars on each side 
+            int empty_chars = (height - no_chars)/2; 
+            for(int i = 0; i < height; i++)
             {
-                can.put(row, midpoint-i, pen); 
-                can.put(row, midpoint+i, pen); 
+                if(i >= empty_chars && i < (height - empty_chars))
+                {
+                    can.put(row, i, pen); 
+                }
             }
         }
         else if (row > midpoint)
         {
-            int no_chars = 17 - 2*(row-midpoint);
-            can.put(row, midpoint, pen); 
-            for(int i = 1; i < no_chars; i+=2) 
+            int no_chars = height - 2*(row-midpoint);
+            int empty_chars = (height - no_chars)/2; 
+            for(int i = 0; i < height; i++)
             {
-                can.put(row, midpoint-i, pen); 
-                can.put(row, midpoint+i, pen); 
+                if(i >= empty_chars && i < (height - empty_chars))
+                {
+                    can.put(row, i, pen); 
+                }
             }
         }
         else if (row == midpoint)
